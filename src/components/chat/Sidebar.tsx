@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 interface SidebarProps {
   onSectionClick: (section: string) => void;
@@ -6,7 +6,7 @@ interface SidebarProps {
   activeSection: string;
 }
 
-const Sidebar = ({ onSectionClick, onNewChat, activeSection }: SidebarProps) => {
+const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSection }) => {
   const sections = [
     { id: 'about', label: 'About Me' },
     { id: 'experience', label: 'Experience' },
@@ -19,13 +19,11 @@ const Sidebar = ({ onSectionClick, onNewChat, activeSection }: SidebarProps) => 
 
   return (
     <div className="w-64 bg-[#0F0F0F] border-r border-white/10 flex flex-col h-screen">
-      {/* Header */}
       <div className="p-6 border-b border-white/10">
         <h1 className="text-lg font-semibold text-white tracking-tight">Muskan Jain</h1>
         <p className="text-sm text-gray-500 mt-1">Software Engineer</p>
       </div>
 
-      {/* New Chat Button */}
       <div className="p-4">
         <button
           onClick={onNewChat}
@@ -38,7 +36,6 @@ const Sidebar = ({ onSectionClick, onNewChat, activeSection }: SidebarProps) => 
         </button>
       </div>
 
-      {/* Navigation Sections */}
       <nav className="flex-1 overflow-y-auto px-2 py-2">
         <div className="space-y-0.5">
           {sections.map((section) => (
@@ -57,7 +54,6 @@ const Sidebar = ({ onSectionClick, onNewChat, activeSection }: SidebarProps) => 
         </div>
       </nav>
 
-      {/* Footer */}
       <div className="p-4 border-t border-white/10">
         <div className="flex gap-3 justify-center">
           <a

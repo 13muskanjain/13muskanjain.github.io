@@ -8,7 +8,7 @@ interface ChatInputProps {
 const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
   const [input, setInput] = useState('');
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (input.trim() && !isLoading) {
       onSendMessage(input.trim());
