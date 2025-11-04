@@ -1,21 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
+import { useState } from 'react';
+import Sidebar from './components/chat/Sidebar';
+import ChatContainer from './components/chat/ChatContainer';
 
 function App() {
+  const [activeSection, setActiveSection] = useState('');
+
+  const handleSectionClick = (section: string) => {
+    setActiveSection(section);
+    console.log('Section clicked:', section);
+  };
+
+  const handleNewChat = () => {
+    setActiveSection('');
+    window.location.reload();
+  };
+
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="flex h-screen bg-[#0F0F0F] text-white overflow-hidden">
+      <Sidebar
+        onSectionClick={handleSectionClick}
+        onNewChat={handleNewChat}
+        activeSection={activeSection}
+      />
+      <ChatContainer />
+    </div>
   );
 }
 
