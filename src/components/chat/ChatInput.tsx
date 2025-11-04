@@ -1,14 +1,14 @@
-import { useState, FormEvent } from 'react';
+import React, { useState } from 'react';
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
   isLoading: boolean;
 }
 
-const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
+const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
   const [input, setInput] = useState('');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (input.trim() && !isLoading) {
       onSendMessage(input.trim());
