@@ -19,15 +19,17 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
 
   return (
     <div className="w-64 bg-[#0F0F0F] border-r border-white/10 flex flex-col h-screen">
-      <div className="p-6 border-b border-white/10">
+      {/* Header with subtle gradient */}
+      <div className="p-6 border-b border-white/10 bg-gradient-to-br from-[#0F0F0F] to-[#1a1a1a]">
         <h1 className="text-lg font-semibold text-white tracking-tight">Muskan Jain</h1>
-        <p className="text-sm text-gray-500 mt-1">Software Engineer</p>
+        <p className="text-sm text-gray-400 mt-1">Software Engineer</p>
       </div>
 
+      {/* New Chat Button with amber accent */}
       <div className="p-4">
         <button
           onClick={onNewChat}
-          className="w-full bg-white hover:bg-gray-100 text-black rounded-lg px-4 py-2.5 flex items-center justify-center gap-2 transition-all duration-200 font-medium text-sm"
+          className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white rounded-lg px-4 py-2.5 flex items-center justify-center gap-2 transition-all duration-200 font-medium text-sm shadow-lg shadow-amber-900/20"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -36,31 +38,38 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
         </button>
       </div>
 
+      {/* Navigation Sections */}
       <nav className="flex-1 overflow-y-auto px-2 py-2">
         <div className="space-y-0.5">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => onSectionClick(section.id)}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-left text-sm ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-left text-sm group ${
                 activeSection === section.id
-                  ? 'bg-white/10 text-white'
+                  ? 'bg-gradient-to-r from-amber-600/20 to-orange-600/20 text-white border border-amber-600/30'
                   : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
               }`}
             >
+              <span className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
+                activeSection === section.id 
+                  ? 'bg-amber-500' 
+                  : 'bg-gray-600 group-hover:bg-gray-400'
+              }`}></span>
               <span className="font-medium">{section.label}</span>
             </button>
           ))}
         </div>
       </nav>
 
-      <div className="p-4 border-t border-white/10">
+      {/* Footer */}
+      <div className="p-4 border-t border-white/10 bg-gradient-to-t from-[#0a0a0a] to-transparent">
         <div className="flex gap-3 justify-center">
           <a
             href="https://github.com/13muskanjain"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+            className="text-gray-500 hover:text-amber-500 transition-colors p-2 rounded-lg hover:bg-white/5"
             title="GitHub"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +80,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
             href="https://www.linkedin.com/in/muskan-jain-850a15190/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+            className="text-gray-500 hover:text-amber-500 transition-colors p-2 rounded-lg hover:bg-white/5"
             title="LinkedIn"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

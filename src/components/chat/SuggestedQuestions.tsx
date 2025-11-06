@@ -11,9 +11,12 @@ const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: s
   return (
     <div className="flex flex-col items-center justify-center h-full p-8">
       <div className="max-w-3xl w-full">
-        <div className="text-center mb-12 space-y-3">
-          <h1 className="text-5xl font-semibold text-white">Muskan Jain</h1>
-          <p className="text-gray-500 text-lg">
+        <div className="text-center mb-12 space-y-4 animate-fadeIn">
+          <div className="inline-block">
+            <h1 className="text-5xl font-semibold text-white mb-2">Muskan Jain</h1>
+            <div className="h-1 w-24 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full mx-auto"></div>
+          </div>
+          <p className="text-gray-400 text-lg">
             Ask me anything about her experience, skills, or background
           </p>
         </div>
@@ -23,9 +26,12 @@ const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: s
             <button
               key={index}
               onClick={() => onQuestionClick(question)}
-              className="bg-[#2F2F2F] hover:bg-[#3F3F3F] border border-white/10 text-gray-300 rounded-xl px-5 py-4 text-left transition-all duration-200 text-sm"
+              className="bg-[#1a1a1a] hover:bg-[#252525] border border-white/10 hover:border-amber-500/30 text-gray-300 hover:text-white rounded-xl px-5 py-4 text-left transition-all duration-200 text-sm group"
+              style={{
+                animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`
+              }}
             >
-              {question}
+              <span className="group-hover:text-amber-500 transition-colors duration-200">→</span> {question}
             </button>
           ))}
         </div>

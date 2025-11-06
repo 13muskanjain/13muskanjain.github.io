@@ -17,7 +17,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 bg-[#0F0F0F] border-t border-white/10">
+    <form onSubmit={handleSubmit} className="p-4 border-t border-white/10 bg-gradient-to-t from-[#0a0a0a] to-[#0F0F0F]">
       <div className="max-w-3xl mx-auto">
         <div className="relative flex items-center gap-2">
           <input
@@ -26,12 +26,12 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Message Muskan's AI..."
             disabled={isLoading}
-            className="flex-1 bg-[#2F2F2F] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-white/20 disabled:opacity-50 disabled:cursor-not-allowed text-[15px]"
+            className="flex-1 bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 disabled:opacity-50 disabled:cursor-not-allowed text-[15px] transition-all duration-200"
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
-            className="bg-white hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed text-black rounded-xl px-5 py-3 font-medium transition-all duration-200 text-sm disabled:hover:bg-white"
+            className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 disabled:opacity-30 disabled:cursor-not-allowed text-white rounded-xl px-5 py-3 font-medium transition-all duration-200 text-sm disabled:hover:from-amber-600 disabled:hover:to-orange-600 shadow-lg shadow-amber-900/20"
           >
             {isLoading ? (
               <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
