@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface SidebarProps {
   onSectionClick: (section: string) => void;
@@ -7,21 +7,25 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSection }) => {
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+
   const sections = [
-    { id: 'about', label: 'About Me', color: { from: '#a855f7', to: '#9333ea' } }, // purple
-    { id: 'experience', label: 'Experience', color: { from: '#9333ea', to: '#7c3aed' } }, // purple to indigo
-    { id: 'projects', label: 'Projects', color: { from: '#7c3aed', to: '#6366f1' } }, // indigo to blue
-    { id: 'education', label: 'Education', color: { from: '#6366f1', to: '#3b82f6' } }, // blue
-    { id: 'certifications', label: 'Certifications', color: { from: '#3b82f6', to: '#06b6d4' } }, // blue to cyan
-    { id: 'skills', label: 'Skills', color: { from: '#06b6d4', to: '#3b82f6' } }, // cyan to blue
-    { id: 'contact', label: 'Contact', color: { from: '#3b82f6', to: '#7c3aed' } }, // blue to indigo
+    { id: 'about', label: 'About Me', gradient: 'linear-gradient(to right, #a855f7, #9333ea)' },
+    { id: 'experience', label: 'Experience', gradient: 'linear-gradient(to right, #9333ea, #7c3aed)' },
+    { id: 'projects', label: 'Projects', gradient: 'linear-gradient(to right, #7c3aed, #6366f1)' },
+    { id: 'education', label: 'Education', gradient: 'linear-gradient(to right, #6366f1, #3b82f6)' },
+    { id: 'certifications', label: 'Certifications', gradient: 'linear-gradient(to right, #3b82f6, #06b6d4)' },
+    { id: 'skills', label: 'Skills', gradient: 'linear-gradient(to right, #06b6d4, #3b82f6)' },
+    { id: 'contact', label: 'Contact', gradient: 'linear-gradient(to right, #3b82f6, #7c3aed)' },
   ];
 
   return (
     <div className="w-64 bg-[#0F0F0F] border-r border-white/10 flex flex-col h-screen">
       {/* Header */}
       <div className="p-6 border-b border-white/10">
-        <h1 className="text-lg font-semibold text-white tracking-tight">Muskan Jain</h1>
+        <h1 className="text-lg font-semibold text-white tracking-tight">
+          Muskan Jain <span className="text-pink-400">&lt;3</span>
+        </h1>
         <p className="text-sm text-gray-400 mt-1">Software Engineer</p>
       </div>
 
@@ -43,11 +47,15 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
         <div className="space-y-0.5">
           {sections.map((section) => {
             const isActive = activeSection === section.id;
+            const isHovered = hoveredSection === section.id;
+            const showGradient = isActive || isHovered;
             
             return (
               <button
                 key={section.id}
                 onClick={() => onSectionClick(section.id)}
+                onMouseEnter={() => setHoveredSection(section.id)}
+                onMouseLeave={() => setHoveredSection(null)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-left text-sm group ${
                   isActive
                     ? 'bg-white/10 text-white'
@@ -56,25 +64,9 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
               >
                 <span 
                   className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
-                    isActive ? 'scale-125' : 'bg-gray-600 group-hover:scale-110'
+                    showGradient ? 'scale-125' : 'bg-gray-600'
                   }`}
-                  style={
-                    isActive
-                      ? {
-                          background: `linear-gradient(to right, ${section.color.from}, ${section.color.to})`
-                        }
-                      : {}
-                  }
-                  onMouseEnter={(e) => {
-                    if (!isActive) {
-                      e.currentTarget.style.background = `linear-gradient(to right, ${section.color.from}, ${section.color.to})`;
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isActive) {
-                      e.currentTarget.style.background = '';
-                    }
-                  }}
+                  style={showGradient ? { background: section.gradient } : {}}
                 ></span>
                 <span className="font-medium">{section.label}</span>
               </button>

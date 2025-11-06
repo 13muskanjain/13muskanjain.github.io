@@ -84,7 +84,6 @@ const ChatContainer = () => {
             ))}
             {isLoading && (
               <div className="flex justify-start mb-6">
-                {/* Cloud/Code themed loader with gradient */}
                 <div className="flex items-center gap-1">
                   <span className="text-purple-500 text-lg animate-pulse">&lt;</span>
                   <div className="flex gap-1">
