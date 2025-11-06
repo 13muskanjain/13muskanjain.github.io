@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
         <p className="text-sm text-gray-400 mt-1">Software Engineer</p>
       </div>
 
-      {/* New Chat Button - subtle purple/blue */}
+      {/* New Chat Button */}
       <div className="p-4">
         <button
           onClick={onNewChat}
@@ -38,27 +38,38 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
         </button>
       </div>
 
-      {/* Navigation Sections */}
+      {/* Navigation Sections with gradient dots */}
       <nav className="flex-1 overflow-y-auto px-2 py-2">
         <div className="space-y-0.5">
-          {sections.map((section) => (
-            <button
-              key={section.id}
-              onClick={() => onSectionClick(section.id)}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-left text-sm group ${
-                activeSection === section.id
-                  ? 'bg-white/10 text-white'
-                  : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
-              }`}
-            >
-              <span className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
-                activeSection === section.id 
-                  ? 'bg-purple-400' 
-                  : 'bg-gray-600 group-hover:bg-gray-400'
-              }`}></span>
-              <span className="font-medium">{section.label}</span>
-            </button>
-          ))}
+          {sections.map((section, index) => {
+            // Calculate gradient color for each dot
+            const gradientColors = [
+              'from-purple-500 to-purple-400',
+              'from-purple-400 to-indigo-400', 
+              'from-indigo-400 to-blue-400',
+              'from-blue-400 to-cyan-400',
+              'from-cyan-400 to-blue-400',
+              'from-blue-400 to-indigo-400',
+              'from-indigo-400 to-purple-400',
+            ];
+            
+            return (
+              <button
+                key={section.id}
+                onClick={() => onSectionClick(section.id)}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-left text-sm group ${
+                  activeSection === section.id
+                    ? 'bg-white/10 text-white'
+                    : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
+                }`}
+              >
+                <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${gradientColors[index]} transition-all duration-200 ${
+                  activeSection === section.id ? 'scale-125' : 'group-hover:scale-110'
+                }`}></span>
+                <span className="font-medium">{section.label}</span>
+              </button>
+            );
+          })}
         </div>
       </nav>
 
@@ -80,7 +91,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
             href="https://www.linkedin.com/in/muskan-jain-850a15190/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-purple-400 transition-colors p-2 rounded-lg hover:bg-white/5"
+            className="text-gray-500 hover:text-blue-400 transition-colors p-2 rounded-lg hover:bg-white/5"
             title="LinkedIn"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

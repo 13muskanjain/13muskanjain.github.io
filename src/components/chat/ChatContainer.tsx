@@ -84,10 +84,15 @@ const ChatContainer = () => {
             ))}
             {isLoading && (
               <div className="flex justify-start mb-6">
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                  <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                {/* Cloud/Code themed loader with gradient */}
+                <div className="flex items-center gap-1">
+                  <span className="text-purple-500 text-lg animate-pulse">&lt;</span>
+                  <div className="flex gap-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-purple-400 animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-indigo-400 animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                  </div>
+                  <span className="text-blue-500 text-lg animate-pulse" style={{ animationDelay: '150ms' }}>/&gt;</span>
                 </div>
               </div>
             )}
