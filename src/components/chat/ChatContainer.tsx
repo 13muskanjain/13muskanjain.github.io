@@ -16,7 +16,7 @@ const ChatContainer = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const scrollTimeoutRef = useRef<number>();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -38,7 +38,7 @@ const ChatContainer = () => {
         clearTimeout(scrollTimeoutRef.current);
       }
       
-      scrollTimeoutRef.current = setTimeout(() => {
+      scrollTimeoutRef.current = window.setTimeout(() => {
         setIsScrolling(false);
       }, 1000);
     };
