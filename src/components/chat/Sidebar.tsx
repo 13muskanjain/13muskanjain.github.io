@@ -8,13 +8,13 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSection }) => {
   const sections = [
-    { id: 'about', label: 'About Me' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'education', label: 'Education' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'about', label: 'About Me', color: { from: '#a855f7', to: '#9333ea' } }, // purple
+    { id: 'experience', label: 'Experience', color: { from: '#9333ea', to: '#7c3aed' } }, // purple to indigo
+    { id: 'projects', label: 'Projects', color: { from: '#7c3aed', to: '#6366f1' } }, // indigo to blue
+    { id: 'education', label: 'Education', color: { from: '#6366f1', to: '#3b82f6' } }, // blue
+    { id: 'certifications', label: 'Certifications', color: { from: '#3b82f6', to: '#06b6d4' } }, // blue to cyan
+    { id: 'skills', label: 'Skills', color: { from: '#06b6d4', to: '#3b82f6' } }, // cyan to blue
+    { id: 'contact', label: 'Contact', color: { from: '#3b82f6', to: '#7c3aed' } }, // blue to indigo
   ];
 
   return (
@@ -38,34 +38,44 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
         </button>
       </div>
 
-      {/* Navigation Sections with gradient dots */}
+      {/* Navigation Sections */}
       <nav className="flex-1 overflow-y-auto px-2 py-2">
         <div className="space-y-0.5">
-          {sections.map((section, index) => {
-            // Calculate gradient color for each dot
-            const gradientColors = [
-              'from-purple-500 to-purple-400',
-              'from-purple-400 to-indigo-400', 
-              'from-indigo-400 to-blue-400',
-              'from-blue-400 to-cyan-400',
-              'from-cyan-400 to-blue-400',
-              'from-blue-400 to-indigo-400',
-              'from-indigo-400 to-purple-400',
-            ];
+          {sections.map((section) => {
+            const isActive = activeSection === section.id;
             
             return (
               <button
                 key={section.id}
                 onClick={() => onSectionClick(section.id)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-left text-sm group ${
-                  activeSection === section.id
+                  isActive
                     ? 'bg-white/10 text-white'
                     : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
                 }`}
               >
-                <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${gradientColors[index]} transition-all duration-200 ${
-                  activeSection === section.id ? 'scale-125' : 'group-hover:scale-110'
-                }`}></span>
+                <span 
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
+                    isActive ? 'scale-125' : 'bg-gray-600 group-hover:scale-110'
+                  }`}
+                  style={
+                    isActive
+                      ? {
+                          background: `linear-gradient(to right, ${section.color.from}, ${section.color.to})`
+                        }
+                      : {}
+                  }
+                  onMouseEnter={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.background = `linear-gradient(to right, ${section.color.from}, ${section.color.to})`;
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.background = '';
+                    }
+                  }}
+                ></span>
                 <span className="font-medium">{section.label}</span>
               </button>
             );
