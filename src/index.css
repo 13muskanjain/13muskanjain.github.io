@@ -24,7 +24,7 @@ body {
   overflow: hidden;
 }
 
-/* Scrollbar - hidden by default */
+/* Scrollbar base styles */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -37,15 +37,25 @@ body {
 ::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 10px;
+  transition: background 0.3s ease-out;
 }
 
-/* Show scrollbar ONLY when hovering over the scrollable container */
-*:hover::-webkit-scrollbar-thumb {
+/* Show scrollbar when scrolling or hovering */
+.scrollbar-visible::-webkit-scrollbar-thumb {
   background: rgba(168, 85, 247, 0.4);
 }
 
-*:hover::-webkit-scrollbar-thumb:hover {
+.scrollbar-visible::-webkit-scrollbar-thumb:hover {
   background: rgba(168, 85, 247, 0.6);
+}
+
+.scrollbar-visible:hover::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.4);
+}
+
+/* Hide scrollbar by default */
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  background: transparent;
 }
 
 /* Animations */

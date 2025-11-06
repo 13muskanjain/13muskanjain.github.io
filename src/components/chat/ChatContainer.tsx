@@ -13,7 +13,10 @@ interface Message {
 const ChatContainer = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -22,6 +25,32 @@ const ChatContainer = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Handle scroll visibility
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSendMessage = async (content: string) => {
     const userMessage: Message = {
@@ -74,7 +103,10 @@ const ChatContainer = () => {
 
   return (
     <div className="flex-1 flex flex-col h-screen bg-[#0F0F0F]">
-      <div className="flex-1 overflow-y-auto px-4 py-6">
+      <div 
+        ref={scrollContainerRef}
+        className={`flex-1 overflow-y-auto px-4 py-6 ${isScrolling ? 'scrollbar-visible' : 'scrollbar-hidden'}`}
+      >
         {messages.length === 0 ? (
           <SuggestedQuestions onQuestionClick={handleSendMessage} />
         ) : (
