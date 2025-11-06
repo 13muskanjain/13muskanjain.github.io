@@ -151,7 +151,12 @@ export default async function handler(req: Request) {
     }
 
     const data = await response.json();
-    const text = data.candidates[0].content.parts[0].text;
+    let text = data.candidates[0].content.parts[0].text;
+    
+    // Remove all markdown formatting
+    text = text.replace(/\*\*/g, ''); // Remove bold markers
+    text = text.replace(/__/g, '');   // Remove underscores
+    text = text.replace(/\*/g, '');   // Remove italic markers
 
     return new Response(JSON.stringify({ message: text }), {
       status: 200,
