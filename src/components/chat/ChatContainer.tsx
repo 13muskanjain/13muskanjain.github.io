@@ -16,7 +16,7 @@ const ChatContainer = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const scrollTimeoutRef = useRef<number>();
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -26,7 +26,6 @@ const ChatContainer = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Handle scroll visibility
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
@@ -38,7 +37,7 @@ const ChatContainer = () => {
         clearTimeout(scrollTimeoutRef.current);
       }
       
-      scrollTimeoutRef.current = window.setTimeout(() => {
+      scrollTimeoutRef.current = setTimeout(() => {
         setIsScrolling(false);
       }, 1000);
     };
