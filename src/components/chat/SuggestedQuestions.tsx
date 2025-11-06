@@ -12,10 +12,7 @@ const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: s
     <div className="flex flex-col items-center justify-center h-full p-8">
       <div className="max-w-3xl w-full">
         <div className="text-center mb-12 space-y-4 animate-fadeIn">
-          <div className="inline-block">
-            <h1 className="text-5xl font-semibold text-white mb-2">Muskan Jain</h1>
-            <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto"></div>
-          </div>
+          <h1 className="text-5xl font-semibold text-white">Muskan Jain</h1>
           <p className="text-gray-400 text-lg">
             Ask me anything about her experience, skills, or background
           </p>

@@ -24,7 +24,7 @@ body {
   overflow: hidden;
 }
 
-/* Custom scrollbar - only visible on hover */
+/* Hide scrollbar by default, show on hover and while scrolling */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -37,14 +37,20 @@ body {
 ::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 10px;
+  transition: background 0.2s;
 }
 
-/* Show scrollbar on hover */
+/* Show scrollbar when hovering over scrollable area */
 *:hover::-webkit-scrollbar-thumb {
   background: rgba(168, 85, 247, 0.3);
 }
 
 *:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.5);
+}
+
+/* Show scrollbar while actively scrolling */
+*:active::-webkit-scrollbar-thumb {
   background: rgba(168, 85, 247, 0.5);
 }
 
