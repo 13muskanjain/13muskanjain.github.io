@@ -24,23 +24,27 @@ body {
   overflow: hidden;
 }
 
-/* Custom scrollbar with purple accent */
+/* Custom scrollbar - only visible on hover */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(17, 24, 39, 0.3);
-  border-radius: 10px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(168, 85, 247, 0.3);
+  background: transparent;
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+/* Show scrollbar on hover */
+*:hover::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.3);
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
   background: rgba(168, 85, 247, 0.5);
 }
 
