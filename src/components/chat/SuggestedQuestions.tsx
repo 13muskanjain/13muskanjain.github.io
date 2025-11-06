@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: string) => void }) => {
   const questions = [
     "Tell me about Muskan's experience with cloud technologies",
