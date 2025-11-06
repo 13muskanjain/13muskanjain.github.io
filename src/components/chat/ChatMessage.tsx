@@ -17,8 +17,8 @@ const ChatMessage = ({ message }: ChatMessageProps) => {
       <div
         className={`max-w-[75%] rounded-2xl px-5 py-3.5 ${
           isUser
-            ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg shadow-amber-900/20'
-            : 'bg-[#1a1a1a] text-gray-100 border border-white/10'
+            ? 'bg-[#2a2b32] text-white'
+            : 'bg-transparent text-gray-100'
         }`}
       >
         <p className="text-[15px] leading-relaxed whitespace-pre-wrap">{message.content}</p>

@@ -14,7 +14,7 @@ const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: s
         <div className="text-center mb-12 space-y-4 animate-fadeIn">
           <div className="inline-block">
             <h1 className="text-5xl font-semibold text-white mb-2">Muskan Jain</h1>
-            <div className="h-1 w-24 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full mx-auto"></div>
+            <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto"></div>
           </div>
           <p className="text-gray-400 text-lg">
             Ask me anything about her experience, skills, or background
@@ -26,12 +26,12 @@ const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: s
             <button
               key={index}
               onClick={() => onQuestionClick(question)}
-              className="bg-[#1a1a1a] hover:bg-[#252525] border border-white/10 hover:border-amber-500/30 text-gray-300 hover:text-white rounded-xl px-5 py-4 text-left transition-all duration-200 text-sm group"
+              className="bg-[#1a1a1a] hover:bg-[#252525] border border-white/10 hover:border-purple-500/30 text-gray-300 hover:text-white rounded-xl px-5 py-4 text-left transition-all duration-200 text-sm group"
               style={{
                 animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`
               }}
             >
-              <span className="group-hover:text-amber-500 transition-colors duration-200">→</span> {question}
+              <span className="group-hover:text-purple-400 transition-colors duration-200">→</span> {question}
             </button>
           ))}
         </div>
