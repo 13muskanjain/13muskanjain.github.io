@@ -97,7 +97,7 @@ const ChatContainer = () => {
       let currentText = '';
       
       for (let i = 0; i < characters.length; i++) {
-        await new Promise(resolve => setTimeout(resolve, 20));
+        await new Promise(resolve => setTimeout(resolve, 15));
         currentText += characters[i];
         
         setMessages((prev) =>
