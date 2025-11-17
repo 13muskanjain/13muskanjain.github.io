@@ -92,13 +92,13 @@ const ChatContainer = () => {
       setMessages((prev) => [...prev, aiMessage]);
       setIsLoading(false);
 
-      // Animate word by word
-      const words = fullText.split(' ');
+      // Animate character by character (like ChatGPT)
+      const characters = fullText.split('');
       let currentText = '';
       
-      for (let i = 0; i < words.length; i++) {
-        await new Promise(resolve => setTimeout(resolve, 50));
-        currentText += (i > 0 ? ' ' : '') + words[i];
+      for (let i = 0; i < characters.length; i++) {
+        await new Promise(resolve => setTimeout(resolve, 20));
+        currentText += characters[i];
         
         setMessages((prev) =>
           prev.map((msg) =>
