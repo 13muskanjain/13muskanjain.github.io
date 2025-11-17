@@ -78,14 +78,35 @@ const ChatContainer = () => {
       }
 
       const data = await response.json();
+      const fullText = data.message;
+      const messageId = (Date.now() + 1).toString();
+      
+      // Create empty message that will be filled word by word
       const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
+        id: messageId,
         role: 'assistant',
-        content: data.message,
+        content: '',
         timestamp: new Date(),
       };
 
       setMessages((prev) => [...prev, aiMessage]);
+      setIsLoading(false);
+
+      // Animate word by word
+      const words = fullText.split(' ');
+      let currentText = '';
+      
+      for (let i = 0; i < words.length; i++) {
+        await new Promise(resolve => setTimeout(resolve, 50));
+        currentText += (i > 0 ? ' ' : '') + words[i];
+        
+        setMessages((prev) =>
+          prev.map((msg) =>
+            msg.id === messageId ? { ...msg, content: currentText } : msg
+          )
+        );
+      }
+      
     } catch (error) {
       console.error('Error:', error);
       const errorMessage: Message = {
@@ -95,7 +116,6 @@ const ChatContainer = () => {
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, errorMessage]);
-    } finally {
       setIsLoading(false);
     }
   };
