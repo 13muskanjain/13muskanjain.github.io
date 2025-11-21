@@ -53,7 +53,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
             return (
               <button
                 key={section.id}
-                onClick={() => onSectionClick(section.id)}
+                onClick={() => onSectionClick(section.label)}
                 onMouseEnter={() => setHoveredSection(section.id)}
                 onMouseLeave={() => setHoveredSection(null)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-left text-sm group ${
