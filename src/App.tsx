@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-ro
 import Sidebar from './components/chat/Sidebar';
 import ChatContainer from './components/chat/ChatContainer';
 import About from './pages/About';
-import Home from './pages/Home';
 import Projects from './pages/Projects';
 
 function AppContent() {
