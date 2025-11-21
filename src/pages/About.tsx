@@ -1,27 +1,27 @@
 const About = () => {
   return (
-    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#0F0F0F] text-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             About Me
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-400">
             DevOps Engineer / Software Engineer
           </p>
         </div>
 
         {/* It started with a choice */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             It started with a choice
           </h2>
-          <p className="text-lg font-semibold text-gray-700 mb-6">
+          <p className="text-lg font-semibold text-gray-300 mb-6">
             and the best gut feeling I ever had
           </p>
           
-          <div className="space-y-4 text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               8th grade. Had to pick an elective - language subject or Computer Science.
             </p>
@@ -46,15 +46,15 @@ const About = () => {
 
         {/* Then I wrote this */}
         <section className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-2xl font-bold text-white mb-4">
             Then I wrote this:
           </h3>
           
-          <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm mb-6">
+          <div className="bg-gray-800 text-green-400 p-4 rounded-lg font-mono text-sm mb-6">
             cout &lt;&lt; "Hello World";
           </div>
           
-          <div className="space-y-4 text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               Watching those words appear on screen because <em>I</em> made it happen?
             </p>
@@ -103,12 +103,12 @@ const About = () => {
 
         {/* The moment everything clicked */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             The moment everything clicked
           </h2>
           <p className="text-sm text-purple-600 font-semibold mb-4">~2015</p>
           
-          <div className="space-y-4 text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               Got my first smartphone in 10th grade. Set up my Gmail account and saw this: "15 GB of free Google Drive storage."
             </p>
@@ -133,11 +133,11 @@ const About = () => {
 
         {/* The CSS revelation */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             The CSS revelation
           </h2>
           
-          <div className="space-y-4 text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               Started building websites during my Bachelor's. Spent hours trying to center a div (if you know, you know).
             </p>
@@ -162,14 +162,14 @@ const About = () => {
 
         {/* Decided to go all in */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             Decided to go all in
           </h2>
-          <p className="text-lg font-semibold text-gray-700 mb-6">
+          <p className="text-lg font-semibold text-gray-300 mb-6">
             Bachelor's in Computer Science with Cloud Specialization
           </p>
           
-          <div className="space-y-4 text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               Chose cloud computing as my specialization because that 15 GB Google Drive question from 10th grade? Still wasn't fully answered.
             </p>
@@ -194,14 +194,14 @@ const About = () => {
 
         {/* Came to the US for my Master's */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             Came to the US for my Master's
           </h2>
-          <p className="text-lg font-semibold text-gray-700 mb-6">
+          <p className="text-lg font-semibold text-gray-300 mb-6">
             University of Texas at Arlington
           </p>
           
-          <div className="space-y-4 text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               Wanted to learn from people smarter than me. Wanted to see how things worked at scale in the US tech industry. Wanted to push myself harder.
             </p>
@@ -222,18 +222,18 @@ const About = () => {
 
         {/* Then came the real world */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-8">
             Then came the real world
           </h2>
           
           {/* Intel */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="text-2xl font-bold text-white mb-2">
               Intel Corporation - Where it got real
             </h3>
-            <p className="text-gray-600 mb-4">India | 2021-2022</p>
+            <p className="text-gray-400 mb-4">India | 2021-2022</p>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 First job. First time my code actually mattered beyond grades.
               </p>
@@ -258,12 +258,12 @@ const About = () => {
 
           {/* SWIFTE */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="text-2xl font-bold text-white mb-2">
               SWIFTE - Startup chaos (loved every bit of it)
             </h3>
-            <p className="text-gray-600 mb-4">Arlington, TX | 2022-2023</p>
+            <p className="text-gray-400 mb-4">Arlington, TX | 2022-2023</p>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 Came back to the US. Joined a startup. Complete 180 from Intel.
               </p>
@@ -296,12 +296,12 @@ const About = () => {
 
           {/* Oracle */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="text-2xl font-bold text-white mb-2">
               Oracle Corporation - Enterprise scale hit different
             </h3>
-            <p className="text-gray-600 mb-4">Texas | 2023-2024</p>
+            <p className="text-gray-400 mb-4">Texas | 2023-2024</p>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 From startup chaos to enterprise precision.
               </p>
@@ -330,12 +330,12 @@ const About = () => {
 
           {/* Compunnel */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="text-2xl font-bold text-white mb-2">
               Compunnel Inc. - Current chapter
             </h3>
-            <p className="text-gray-600 mb-4">Dallas, TX | 2025-Present</p>
+            <p className="text-gray-400 mb-4">Dallas, TX | 2025-Present</p>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 Right now, I'm living in the sweet spot between development and operations - DevOps engineering.
               </p>
@@ -373,18 +373,18 @@ const About = () => {
 
         {/* What actually gets me excited */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             What actually gets me excited
           </h2>
-          <p className="text-lg text-gray-600 mb-8">Beyond the resume points</p>
+          <p className="text-lg text-gray-400 mb-8">Beyond the resume points</p>
           
           {/* Cloud infrastructure */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl font-bold text-white mb-4">
               Cloud infrastructure that just works
             </h3>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 There's something deeply satisfying about designing systems that handle millions of requests without breaking. Load balancing, auto-scaling, fault tolerance - this is the stuff I think about.
               </p>
@@ -401,11 +401,11 @@ const About = () => {
 
           {/* The DevOps mindset */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl font-bold text-white mb-4">
               The DevOps mindset
             </h3>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 I love the space between development and operations. Building isn't enough - you need to ship it, monitor it, scale it, and keep it running.
               </p>
@@ -422,11 +422,11 @@ const About = () => {
 
           {/* Automation */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl font-bold text-white mb-4">
               Automation is everything
             </h3>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 I'm all about automating repetitive, everyday tasks so we can concentrate on the important stuff.
               </p>
@@ -447,11 +447,11 @@ const About = () => {
 
           {/* Making complex things simple */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl font-bold text-white mb-4">
               Making complex things simple
             </h3>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 Anyone can make something complicated. The real challenge? Making complex systems simple to use. Clean APIs. Good abstractions. Infrastructure that developers don't have to think about.
               </p>
@@ -465,17 +465,17 @@ const About = () => {
 
         {/* Right now in my life */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-8">
             Right now in my life
           </h2>
           
           {/* Working at Compunnel */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl font-bold text-white mb-4">
               Working at Compunnel
             </h3>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 Building production-grade cloud infrastructure. Migrating legacy systems. Automating everything that can be automated.
               </p>
@@ -492,11 +492,11 @@ const About = () => {
 
           {/* Always learning */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl font-bold text-white mb-4">
               Always learning
             </h3>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>Right now exploring:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Advanced Kubernetes patterns</li>
@@ -513,11 +513,11 @@ const About = () => {
 
           {/* Looking for what's next */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <h3 className="text-xl font-bold text-white mb-4">
               Looking for what's next
             </h3>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 I'm authorized to work in the US (STEM OPT). Can relocate anywhere across the US.
               </p>
@@ -539,17 +539,17 @@ const About = () => {
 
         {/* Life beyond code */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-8">
             Life beyond code
           </h2>
           
           {/* Velvet Taco */}
           <div className="mb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <span>🌮</span> Velvet Taco
             </h3>
             
-            <div className="space-y-2 text-gray-700 leading-relaxed">
+            <div className="space-y-2 text-gray-300 leading-relaxed">
               <p>
                 Honestly? This might be the only thing that makes me want to stay in Texas.
               </p>
@@ -566,33 +566,33 @@ const About = () => {
 
           {/* Music while coding */}
           <div className="mb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <span>🎵</span> Music while coding
             </h3>
             
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               Bollywood soundtracks when I need focus. Lo-fi when debugging. Complete silence when something's seriously broken.
             </p>
           </div>
 
           {/* Binge-watching patterns */}
           <div className="mb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <span>📺</span> Binge-watching patterns
             </h3>
             
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               Tech documentaries on weekends. Startup stories. How things are built. Also guilty of rewatching The Office when I need something familiar.
             </p>
           </div>
 
           {/* Staying connected */}
           <div className="mb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <span>🌍</span> Staying connected
             </h3>
             
-            <div className="space-y-2 text-gray-700 leading-relaxed">
+            <div className="space-y-2 text-gray-300 leading-relaxed">
               <p>
                 Celebrating Diwali, Holi, and other festivals even when I'm far from home. FaceTiming family during Indian mornings (which is midnight here - sleep schedule is a myth).
               </p>
@@ -605,22 +605,22 @@ const About = () => {
 
           {/* Staying active */}
           <div className="mb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <span>💪</span> Staying active
             </h3>
             
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               Gym, yoga, and Pilates help clear the mind after debugging sessions. Also, sitting and coding for 8+ hours isn't great for your back. Learned that the hard way.
             </p>
           </div>
 
           {/* Plant parent life */}
           <div className="mb-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
+            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
               <span>🌱</span> Plant parent life
             </h3>
             
-            <div className="space-y-2 text-gray-700 leading-relaxed">
+            <div className="space-y-2 text-gray-300 leading-relaxed">
               <p>
                 I collect plants. My apartment is slowly turning into a jungle, and I'm not mad about it. There's something calming about taking care of them - watering, repotting, watching them grow.
               </p>
@@ -634,11 +634,11 @@ const About = () => {
 
         {/* The honest truth */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             The honest truth
           </h2>
           
-          <div className="space-y-4 text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               I'm at that stage where I've built enough to know what I'm good at, but still learning enough to know how much I don't know.
             </p>
@@ -663,44 +663,44 @@ const About = () => {
 
         {/* Quick facts */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl font-bold text-white mb-8">
             Quick facts about me
           </h2>
           
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="font-semibold text-gray-900 mb-1">Current workflow</p>
-              <p className="text-gray-700 text-sm">VS Code + Terminal + way too many tabs open</p>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="font-semibold text-white mb-1">Current workflow</p>
+              <p className="text-gray-300 text-sm">VS Code + Terminal + way too many tabs open</p>
             </div>
             
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="font-semibold text-gray-900 mb-1">Debugging style</p>
-              <p className="text-gray-700 text-sm">Console.log everywhere (don't judge)</p>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="font-semibold text-white mb-1">Debugging style</p>
+              <p className="text-gray-300 text-sm">Console.log everywhere (don't judge)</p>
             </div>
             
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="font-semibold text-gray-900 mb-1">Hot take</p>
-              <p className="text-gray-700 text-sm">Vim vs VSCode debates are pointless. Use what works for you.</p>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="font-semibold text-white mb-1">Hot take</p>
+              <p className="text-gray-300 text-sm">Vim vs VSCode debates are pointless. Use what works for you.</p>
             </div>
             
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="font-semibold text-gray-900 mb-1">Deployment philosophy</p>
-              <p className="text-gray-700 text-sm">If you're not scared before deploying to production, you're not paying attention</p>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="font-semibold text-white mb-1">Deployment philosophy</p>
+              <p className="text-gray-300 text-sm">If you're not scared before deploying to production, you're not paying attention</p>
             </div>
             
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="font-semibold text-gray-900 mb-1">Learning approach</p>
-              <p className="text-gray-700 text-sm">Break it, fix it, understand why it broke</p>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="font-semibold text-white mb-1">Learning approach</p>
+              <p className="text-gray-300 text-sm">Break it, fix it, understand why it broke</p>
             </div>
             
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="font-semibold text-gray-900 mb-1">Work authorization</p>
-              <p className="text-gray-700 text-sm">STEM OPT</p>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="font-semibold text-white mb-1">Work authorization</p>
+              <p className="text-gray-300 text-sm">STEM OPT</p>
             </div>
             
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="font-semibold text-gray-900 mb-1">Relocation</p>
-              <p className="text-gray-700 text-sm">Open to anywhere in the US</p>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="font-semibold text-white mb-1">Relocation</p>
+              <p className="text-gray-300 text-sm">Open to anywhere in the US</p>
             </div>
           </div>
         </section>
