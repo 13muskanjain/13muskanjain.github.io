@@ -13,7 +13,7 @@ const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: s
       <div className="max-w-3xl w-full">
         <div className="text-center mb-12 space-y-6 animate-fadeIn">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            Welcome!
+            Hi there!
           </h1>
           <p className="text-xl text-gray-300 mb-6">
             Looking to learn about Muskan?
