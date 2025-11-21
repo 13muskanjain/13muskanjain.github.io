@@ -1,6 +1,40 @@
+import { useState, useRef, useEffect } from 'react';
+
 const About = () => {
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#0F0F0F] text-white py-12 px-4 sm:px-6 lg:px-8">
+    <div 
+      ref={scrollContainerRef}
+      className={`flex-1 h-screen overflow-y-auto bg-[#0F0F0F] text-white py-12 px-4 sm:px-6 lg:px-8 ${isScrolling ? 'scrollbar-visible' : 'scrollbar-hidden'}`}
+    >
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-16">
