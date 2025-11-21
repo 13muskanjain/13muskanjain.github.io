@@ -12,11 +12,14 @@ const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: s
     <div className="flex flex-col items-center justify-center h-full p-8">
       <div className="max-w-3xl w-full">
         <div className="text-center mb-12 space-y-6 animate-fadeIn">
-          <h1 className="text-4xl md:text-5xl font-semibold text-white">
-            Welcome! Looking to learn about Muskan?
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            Welcome!
           </h1>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">
-            I'm her AI assistant, here to help. Want to know about her AWS migrations? React applications? Startup experience? Whether she's available? Just ask.
+          <p className="text-xl text-gray-300 mb-6">
+            Looking to learn about Muskan?
+          </p>
+          <p className="text-base text-gray-400 leading-relaxed max-w-xl mx-auto">
+            I'm her AI assistant, here to help. Ask me about her AWS migrations, React applications, startup experience, or availability.
           </p>
         </div>
 
