@@ -23,8 +23,14 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
     <div className="w-64 bg-[#0F0F0F] border-r border-white/10 flex flex-col h-screen">
       {/* Header */}
       <div className="p-6 border-b border-white/10">
-        <h1 className="text-lg font-semibold text-white tracking-tight">
-          Muskan Jain <span className="text-pink-400">&lt;3</span>
+        <h1 className="text-lg font-semibold text-white tracking-tight flex items-center gap-2">
+          Muskan Jain 
+          <span 
+            className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 animate-spin"
+            style={{ animationDuration: '3s' }}
+          >
+            /
+          </span>
         </h1>
         <p className="text-sm text-gray-400 mt-1">Software Engineer</p>
       </div>
