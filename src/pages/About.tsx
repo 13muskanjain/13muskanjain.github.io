@@ -58,7 +58,7 @@ const About = ({ activeSection, onSectionChange }: AboutProps) => {
         clearTimeout(scrollTimeoutRef.current);
       }
     };
-  }, []);
+  }, [onSectionChange]);
 
   return (
     <div 
