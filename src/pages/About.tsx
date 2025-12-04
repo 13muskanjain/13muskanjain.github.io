@@ -62,11 +62,11 @@ const About = ({ onSectionChange }: AboutProps) => {
   return (
     <div 
       ref={scrollContainerRef}
-      className={`flex-1 h-screen overflow-y-auto bg-[#0F0F0F] text-white py-12 px-4 sm:px-6 lg:px-8 ${isScrolling ? 'scrollbar-visible' : 'scrollbar-hidden'}`}
+      className={`flex-1 h-screen overflow-y-auto bg-[#0F0F0F] text-white ${isScrolling ? 'scrollbar-visible' : 'scrollbar-hidden'}`}
     >
-      <div className="max-w-4xl mx-auto">
+      <div id="about" className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         {/* Header with Photo */}
-        <div id="about" className="mb-16 text-center">
+        <div className="mb-16 text-center">
           <div className="mb-8 flex justify-center">
             <img 
               src="/myphoto.jpg" 
@@ -247,7 +247,7 @@ const About = ({ onSectionChange }: AboutProps) => {
         </section>
 
         {/* Decided to go all in */}
-        <section className="mb-16">
+        <section id="education" className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-4">
             Decided to go all in
           </h2>
@@ -279,7 +279,7 @@ const About = ({ onSectionChange }: AboutProps) => {
         </section>
 
         {/* Came to the US for my Master's */}
-        <section id="education" className="mb-16">
+        <section className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-4">
             Came to the US for my Master's
           </h2>
