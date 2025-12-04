@@ -11,11 +11,11 @@ const Sidebar: React.FC<SidebarProps> = ({ onSectionClick, onNewChat, activeSect
 
   const sections = [
     { id: 'about', label: 'About Me', gradient: 'linear-gradient(to right, #a855f7, #9333ea)' },
-    { id: 'experience', label: 'Experience', gradient: 'linear-gradient(to right, #9333ea, #7c3aed)' },
-    { id: 'projects', label: 'Projects', gradient: 'linear-gradient(to right, #7c3aed, #6366f1)' },
-    { id: 'education', label: 'Education', gradient: 'linear-gradient(to right, #6366f1, #3b82f6)' },
+    { id: 'education', label: 'Education', gradient: 'linear-gradient(to right, #9333ea, #7c3aed)' },
+    { id: 'experience', label: 'Experience', gradient: 'linear-gradient(to right, #7c3aed, #6366f1)' },
+    { id: 'skills', label: 'Skills', gradient: 'linear-gradient(to right, #6366f1, #3b82f6)' },
     { id: 'certifications', label: 'Certifications', gradient: 'linear-gradient(to right, #3b82f6, #06b6d4)' },
-    { id: 'skills', label: 'Skills', gradient: 'linear-gradient(to right, #06b6d4, #3b82f6)' },
+    { id: 'projects', label: 'Projects', gradient: 'linear-gradient(to right, #06b6d4, #3b82f6)' },
     { id: 'contact', label: 'Contact', gradient: 'linear-gradient(to right, #3b82f6, #7c3aed)' },
   ];
 

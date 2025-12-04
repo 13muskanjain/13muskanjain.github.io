@@ -1,6 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 
-const About = () => {
+interface AboutProps {
+  activeSection?: string;
+  onSectionChange?: (section: string) => void;
+}
+
+const About = ({ activeSection, onSectionChange }: AboutProps) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -19,6 +24,31 @@ const About = () => {
       scrollTimeoutRef.current = setTimeout(() => {
         setIsScrolling(false);
       }, 1000);
+
+      // Detect which section is in view
+      if (onSectionChange) {
+        const sections = ['about', 'education', 'experience', 'skills', 'certifications', 'projects', 'contact'];
+        const sectionElements = sections.map(id => document.getElementById(id)).filter(Boolean);
+        
+        for (const element of sectionElements) {
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+              const sectionMap: { [key: string]: string } = {
+                'about': 'About Me',
+                'education': 'Education',
+                'experience': 'Experience',
+                'skills': 'Skills',
+                'certifications': 'Certifications',
+                'projects': 'Projects',
+                'contact': 'Contact',
+              };
+              onSectionChange(sectionMap[element.id] || '');
+              break;
+            }
+          }
+        }
+      }
     };
 
     container.addEventListener('scroll', handleScroll);
@@ -37,7 +67,7 @@ const About = () => {
     >
       <div className="max-w-4xl mx-auto">
         {/* Header with Photo */}
-        <div className="mb-16 text-center">
+        <div id="about" className="mb-16 text-center">
           <div className="mb-8 flex justify-center">
             <img 
               src="/myphoto.jpg" 
@@ -250,7 +280,7 @@ const About = () => {
         </section>
 
         {/* Came to the US for my Master's */}
-        <section className="mb-16">
+        <section id="education" className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-4">
             Came to the US for my Master's
           </h2>
@@ -278,7 +308,7 @@ const About = () => {
         </section>
 
         {/* Then came the real world */}
-        <section className="mb-16">
+        <section id="experience" className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8">
             Then came the real world
           </h2>
@@ -760,6 +790,38 @@ const About = () => {
               <p className="text-gray-300 text-sm">Open to anywhere in the US</p>
             </div>
           </div>
+        </section>
+
+        {/* Skills - Placeholder */}
+        <section id="skills" className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-8">
+            Skills
+          </h2>
+          <p className="text-gray-400">Coming soon...</p>
+        </section>
+
+        {/* Certifications - Placeholder */}
+        <section id="certifications" className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-8">
+            Certifications
+          </h2>
+          <p className="text-gray-400">Coming soon...</p>
+        </section>
+
+        {/* Projects - Placeholder */}
+        <section id="projects" className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-8">
+            Projects
+          </h2>
+          <p className="text-gray-400">Coming soon...</p>
+        </section>
+
+        {/* Contact - Placeholder */}
+        <section id="contact" className="mb-16">
+          <h2 className="text-3xl font-bold text-white mb-8">
+            Contact
+          </h2>
+          <p className="text-gray-400">Coming soon...</p>
         </section>
       </div>
     </div>
