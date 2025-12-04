@@ -1,11 +1,11 @@
 const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: string) => void }) => {
   const questions = [
-    "Tell me about Muskan's experience with cloud technologies",
-    "What are her key technical strengths?",
+    "What makes her stand out as an engineer?",
+    "Tell me about her cloud infrastructure experience",
+    "How has she delivered measurable business impact?",
+    "What's her experience with production-scale systems?",
     "Is she currently available for opportunities?",
-    "Walk me through her most recent project",
-    "What certifications and credentials does she hold?",
-    "Can you analyze a job description for fit?",
+    "Walk me through her startup experience",
   ];
 
   return (
