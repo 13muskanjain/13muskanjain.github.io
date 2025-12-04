@@ -19,7 +19,7 @@ const SuggestedQuestions = ({ onQuestionClick }: { onQuestionClick: (question: s
             Looking to learn about Muskan?
           </p>
           <p className="text-base text-gray-400 leading-relaxed max-w-xl mx-auto">
-            I'm her AI assistant, here to help. Ask me about her AWS migrations, React applications, startup experience, or availability.
+            I'm her AI assistant, here to help. Curious about her AWS migrations? React applications? Startup experience? Or something else entirely? Just ask.
           </p>
         </div>
 
