@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 
 interface AboutProps {
-  activeSection?: string;
   onSectionChange?: (section: string) => void;
 }
 
-const About = ({ activeSection, onSectionChange }: AboutProps) => {
+const About = ({ onSectionChange }: AboutProps) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);

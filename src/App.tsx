@@ -43,7 +43,7 @@ function App() {
         onNewChat={handleNewChat}
         activeSection={activeSection}
       />
-      {activeSection && activeSection !== '' ? <About activeSection={activeSection} onSectionChange={setActiveSection} /> : <ChatContainer />}
+      {activeSection && activeSection !== '' ? <About onSectionChange={setActiveSection} /> : <ChatContainer />}
     </div>
   );
 }
